@@ -300,7 +300,6 @@ async function transTempPics(imgList, dir, id, prefix = '') {
 
 		let filePath = imgList[i];
 		let ext = filePath.match(/\.[^.]+?$/)[0];
-
 		// 是否为临时文件
 		if (filePath.includes('tmp') || filePath.includes('temp') || filePath.includes('wxfile')) {
 			let rd = prefix + dataHelper.genRandomNum(100000, 999999);

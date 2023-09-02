@@ -22,7 +22,7 @@ class BaseProjectService extends BaseService {
 		const COLLECTIONS = 'bx_admin|bx_day|bx_join|bx_log|bx_meet|bx_news|bx_product|bx_album|bx_fav|bx_user';
 		const CONST_PIC = '/images/cover.gif';
 
-		const NEWS_CATE = '1=本店动态,2=拍摄小贴士';
+		const NEWS_CATE = '1=本店动态,2=护理小贴士';
 		const MEET_TYPE = '1=预约拍摄';
 		const ALBUM_CATE = '1=婚纱,2=旅拍,3=儿童,4=写真,5=萌宠';
 		const PRODUCT_CATE = '1=套系';

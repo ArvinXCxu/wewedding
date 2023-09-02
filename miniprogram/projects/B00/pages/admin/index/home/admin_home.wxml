@@ -32,12 +32,12 @@
 	<view class="comm-list grid col-3">
 		<view class="item" bindtap="url" data-url="../../user/list/admin_user_list"> <text class="icon-group_fill text-green"></text> <text class="text-black">用户管理</text>
 		</view>
-		<view class="item" bindtap="url" data-url="../../meet/list/admin_meet_list"> <text class="icon-activityfill text-blue"></text> <text class="text-black">预约管理</text>
-		</view>  
+		<!-- <view class="item" bindtap="url" data-url="../../meet/list/admin_meet_list"> <text class="icon-activityfill text-blue"></text> <text class="text-black">预约管理</text>
+		</view>   -->
 		<view class="item" bindtap="url" data-url="../../news/list/admin_news_list"> <text class="icon-newsfill text-darkgreen"></text> <text class="text-black">内容管理</text>
 		</view>
 	 
-		<view class="item" bindtap="url" data-url="../../album/list/admin_album_list"> <text class="icon-picfill text-red"></text> <text class="text-black">样片管理</text>
+		<view class="item" bindtap="url" data-url="../../album/list/admin_album_list"> <text class="icon-picfill text-red"></text> <text class="text-black">商品管理</text>
 		</view>
 		<view class="item" bindtap="url" data-url="../../product/list/admin_product_list"> <text class="icon-album text-cyan"></text> <text class="text-black">套系管理</text>
 		</view>

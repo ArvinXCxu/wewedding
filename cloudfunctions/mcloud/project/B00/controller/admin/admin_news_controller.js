@@ -238,7 +238,6 @@ class AdminNewsController extends BaseProjectAdminController {
 
 		// 取得数据
 		let input = this.validateData(rules);
-
 		let service = new AdminNewsService();
 		return await service.updateNewsPic(input);
 	}

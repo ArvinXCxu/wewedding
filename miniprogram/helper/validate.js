@@ -468,7 +468,6 @@
 
 			// 空 且非必填的 不校验 
 			if (ruleName != 'must' && val === undefined) continue;
-
  			switch (ruleName) {
  				case 'must':
  					result = checkRequired(val, desc);

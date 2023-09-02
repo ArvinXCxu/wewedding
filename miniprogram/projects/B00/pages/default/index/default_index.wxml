@@ -1,5 +1,8 @@
 <view class="main">
 	<view class="up">
+		<view class="projectName">
+				红草地日进斗金系统
+		</view>
 		<image mode="aspectFill" src="../../../images/default_index_bg.png" />
 	</view>
 	<view class="down">
@@ -13,21 +16,14 @@
 				</view>
 			</view>
 
-			<view bindtap="url" data-url="../../news/index/news_index?id=2" class="item">
-				<view class="item-inner">
-					<view class="img">
-						<image src="../../../images/menu/activity.png" />
-					</view>
-					<view class="title">拍摄小贴士</view>
-				</view>
-			</view>
+
 
 			<view bindtap="url" data-type="relaunch" data-url="../../album/index/album_index" class="item">
 				<view class="item-inner">
 					<view class="img">
 						<image src="../../../images/menu/album_cur.png" />
 					</view>
-					<view class="title">样片欣赏</view>
+					<view class="title">商品欣赏</view>
 				</view>
 			</view>
 
@@ -36,18 +32,25 @@
 					<view class="img">
 						<image src="../../../images/menu/product_cur.png" />
 					</view>
-					<view class="title">套系</view>
+					<view class="title">套系欣赏</view>
 				</view>
 			</view>
-
-			<view bindtap="url" data-url="../../meet/index/meet_index?id=1" class="item">
+            <view bindtap="url" data-url="../../news/index/news_index?id=2" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/activity.png" />
+					</view>
+					<view class="title">护理小贴士</view>
+				</view>
+			</view>
+			<!-- <view bindtap="url" data-url="../../meet/index/meet_index?id=1" class="item">
 				<view class="item-inner">
 					<view class="img">
 						<image style="width:65rpx;height:65rpx;" src="../../../images/menu/day_cur.png" />
 					</view>
 					<view class="title">预约拍摄</view>
 				</view>
-			</view>
+			</view> -->
 
 			<view bindtap="url" data-url="../../about/index/about_index" class="item">
 				<view class="item-inner">

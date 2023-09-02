@@ -7,7 +7,15 @@
 .up {
 	width: 100%; 
 }
-
+.up .projectName{
+	position: absolute;
+	top: 120px;
+	right: 60px;
+	z-index: 100;
+	font-size: 20px;
+	font-weight: 500;
+	color: #595f7e;
+}
 .up image {
 	width: 100%;
 	height: 500rpx; 

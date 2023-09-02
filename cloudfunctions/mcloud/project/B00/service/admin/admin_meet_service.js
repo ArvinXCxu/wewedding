@@ -40,7 +40,7 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	// 按项目统计人数
 	async statJoinCntByMeet(meetId) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：15');
 	}
 
 	/** 自助签到码 */
@@ -70,12 +70,12 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	/** 管理员按钮核销 */
 	async checkinJoin(joinId, flag) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：16');
 	}
 
 	/** 管理员扫码核销 */
 	async scanJoin(meetId, code) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：17');
 	}
 
 	/**
@@ -102,9 +102,9 @@ class AdminMeetService extends BaseProjectAdminService {
 		return daysSet;
 	}
 
-	/** 取消某个时间段的所有预约记录 */
+	/** 取消某个时间段的所有预约记录 */Ï
 	async cancelJoinByTimeMark(admin, meetId, timeMark, reason) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：21');
 
 	}
 
@@ -120,12 +120,12 @@ class AdminMeetService extends BaseProjectAdminService {
 		formSet,
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：31');
 	}
 
 	/**删除数据 */
 	async delMeet(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：32');
 	}
 
 	/**获取信息 */
@@ -153,7 +153,7 @@ class AdminMeetService extends BaseProjectAdminService {
 		content // 富文本数组
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：33');
 
 	}
 
@@ -166,13 +166,13 @@ class AdminMeetService extends BaseProjectAdminService {
 		styleSet
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：34');
 
 	}
 
 	/** 更新日期设置 */
 	async _editDays(meetId, nowDay, daysSetData) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：36');
 	}
 
 	/**更新数据 */
@@ -186,7 +186,7 @@ class AdminMeetService extends BaseProjectAdminService {
 		isShowLimit,
 		formSet
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：41');
 
 	}
 
@@ -298,7 +298,7 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	/** 删除 */
 	async delJoin(joinId) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：42');
 
 	}
 
@@ -306,17 +306,17 @@ class AdminMeetService extends BaseProjectAdminService {
 	 * 特殊约定 99=>正常取消 
 	 */
 	async statusJoin(admin, joinId, status, reason = '') {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：53');
 	}
 
 	/**修改项目状态 */
 	async statusMeet(id, status) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：52');
 	}
 
 	/**置顶排序设定 */
 	async sortMeet(id, sort) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：51');
 	}
 
 	//##################模板
@@ -326,7 +326,7 @@ class AdminMeetService extends BaseProjectAdminService {
 		times,
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：50');
 
 	}
 
@@ -337,13 +337,13 @@ class AdminMeetService extends BaseProjectAdminService {
 		isLimit
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：49');
 	}
 
 
 	/**删除数据 */
 	async delMeetTemp(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：48');
 
 	}
 
@@ -373,7 +373,7 @@ class AdminMeetService extends BaseProjectAdminService {
 		endDay,
 		status
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：47');
 
 	}
 

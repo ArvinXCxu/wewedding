@@ -93,7 +93,7 @@ Page({
 
 			// 先创建，再上传 
 			let result = await cloudHelper.callCloudSumbit('admin/news_insert', data);
-			let newsId = result.data.id;
+			let newsId = result.data;
 
 			// 封面图片 提交处理 
 			wx.showLoading({
@@ -101,8 +101,7 @@ Page({
 				mask: true
 			});
 			await cloudHelper.transCoverTempPics(this.data.imgList, 'news/', newsId, 'admin/news_update_pic');
-
-			// 富文本
+			console.log('img',this.data.imgList);
 			let formContent = this.data.formContent;
 			if (formContent && formContent.length > 0) {
 				wx.showLoading({
@@ -121,6 +120,7 @@ Page({
 				wx.navigateBack();
 
 			}
+
 			pageHelper.showSuccToast('添加成功', 2000, callback);
 
 		} catch (err) {

@@ -22,7 +22,7 @@ class AdminAlbumService extends BaseProjectAdminService {
 		order,
 		forms
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：7');
 	}
 
 	/**删除数据 */
@@ -31,7 +31,7 @@ class AdminAlbumService extends BaseProjectAdminService {
 			_id: id
 		}
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：8');
 
 	}
 
@@ -53,7 +53,7 @@ class AdminAlbumService extends BaseProjectAdminService {
 		id,
 		hasImageForms
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：9');
 	}
 
 
@@ -67,7 +67,7 @@ class AdminAlbumService extends BaseProjectAdminService {
 		forms,
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：11');
 	}
 
 	/**取得分页列表 */
@@ -134,17 +134,17 @@ class AdminAlbumService extends BaseProjectAdminService {
 
 	/**修改状态 */
 	async statusAlbum(id, status) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：12');
 	}
 
 	/**置顶与排序设定 */
 	async sortAlbum(id, sort) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：13');
 	}
 
 	/**首页设定 */
 	async homeAlbum(id, home) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：14');
 	}
 }
 

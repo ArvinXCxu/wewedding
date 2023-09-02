@@ -97,7 +97,7 @@ class AdminUserService extends BaseProjectAdminService {
 
 	/**删除用户 */
 	async delUser(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：29');
 	}
 
 	// #####################导出用户数据
@@ -115,7 +115,7 @@ class AdminUserService extends BaseProjectAdminService {
 	/**导出用户数据 */
 	async exportUserDataExcel(condition, fields) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('该功能暂不开放，如有需要请加作者微信：30');
 
 	}
 

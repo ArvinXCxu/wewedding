@@ -1,7 +1,7 @@
 /**
  * Notes: 资讯后台管理
  * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux0730 (wechat)
- * Date: 2021-07-11 07:48:00 
+ * Date: 2021-07-11 07:48:00
  */
 
 const BaseProjectAdminService = require('./base_project_admin_service.js');
@@ -11,6 +11,7 @@ const util = require('../../../../framework/utils/util.js');
 const cloudUtil = require('../../../../framework/cloud/cloud_util.js');
 
 const NewsModel = require('../../model/news_model.js');
+const setupUtil = require("../../../../framework/utils/setup/setup_util");
 
 class AdminNewsService extends BaseProjectAdminService {
 
@@ -23,12 +24,24 @@ class AdminNewsService extends BaseProjectAdminService {
 		desc = '',
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {};
+		data.NEWS_TITLE = title;
+		data.NEWS_DESC = desc;
+	 	data.NEWS_CATE_ID = cateId;
+	    data.NEWS_CATE_NAME = cateName;
+		data.NEWS_ORDER =order ;
+		data.NEWS_PIC = [];
+		data.NEWS_CONTENT = [];
+		return await NewsModel.insert(data);
 	}
 
 	/**删除资讯数据 */
 	async delNews(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		console.log('id',id)
+		let where = {
+			_id: id
+		}
+		return await NewsModel.del(where)
 
 	}
 
@@ -53,9 +66,12 @@ class AdminNewsService extends BaseProjectAdminService {
 		id,
 		content // 富文本数组
 	}) {
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		let where = {
+			_id: id
+		}
+		let data = {};
+		data.NEWS_CONTENT=content
+		return await NewsModel.insertOrUpdate(where,data,false)
 	}
 
 	/**
@@ -66,9 +82,12 @@ class AdminNewsService extends BaseProjectAdminService {
 		id,
 		imgList // 图片数组
 	}) {
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		let where = {
+			_id: id
+		}
+		let data = {};
+		data.NEWS_PIC=imgList
+		return await NewsModel.insertOrUpdate(where,data,false)
 	}
 
 
@@ -81,8 +100,16 @@ class AdminNewsService extends BaseProjectAdminService {
 		order,
 		desc = '',
 	}) {
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let where = {
+			_id: id
+		}
+		let data = {};
+		data.NEWS_TITLE = title;
+		data.NEWS_DESC = desc;
+		data.NEWS_CATE_ID = cateId;
+		data.NEWS_CATE_NAME = cateName;
+		data.NEWS_ORDER =order ;
+		return await NewsModel.insertOrUpdate(where,data,false)
 	}
 
 	/**取得资讯分页列表 */
@@ -136,17 +163,32 @@ class AdminNewsService extends BaseProjectAdminService {
 
 	/**修改资讯状态 */
 	async statusNews(id, status) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let where = {
+			_id: id
+		}
+		let data = {};
+		data.NEWS_STATUS=status
+		return await NewsModel.insertOrUpdate(where,data,false)
 	}
 
 	/**置顶与排序设定 */
 	async sortNews(id, sort) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let where = {
+			_id: id
+		}
+		let data = {};
+		data.NEWS_ORDER=sort
+		return await NewsModel.insertOrUpdate(where,data,false)
 	}
-
+Ï
 	/**首页设定 */
 	async homeNews(id, home) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let where = {
+			_id: id
+		}
+		let data = {};
+		data.NEWS_ORDER=home
+		return await NewsModel.insertOrUpdate(where,data,false)
 	}
 }
 

@@ -63,7 +63,7 @@
 		"backgroundColor": "#f1f1f1",
 		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#ffffff",
-		"navigationBarTitleText": "通用婚纱影楼小程序",
+		"navigationBarTitleText": "红草地日进斗金",
 		"navigationBarTextStyle": "black"
 	},
 	"tabBar": {
@@ -80,21 +80,15 @@
 			},
 			{
 				"pagePath": "projects/B00/pages/album/index/album_index",
-				"text": "样片",
+				"text": "商品欣赏",
 				"iconPath": "/projects/B00/images/tabbar/album.png",
 				"selectedIconPath": "/projects/B00/images/tabbar/album_cur.png"
 			},
 			{
 				"pagePath": "projects/B00/pages/product/index/product_index",
-				"text": "套系",
+				"text": "套系欣赏",
 				"iconPath": "/projects/B00/images/tabbar/product.png",
 				"selectedIconPath": "/projects/B00/images/tabbar/product_cur.png"
-			},
-			{
-				"pagePath": "projects/B00/pages/meet/calendar/meet_calendar",
-				"text": "预约日历",
-				"iconPath": "/projects/B00/images/tabbar/day.png",
-				"selectedIconPath": "/projects/B00/images/tabbar/day_cur.png"
 			},
 			{
 				"pagePath": "projects/B00/pages/my/index/my_index",

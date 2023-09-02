@@ -21,13 +21,13 @@ class AdminHomeService extends BaseProjectAdminService {
 
 		let userCnt = await UserModel.count(where);
 		let newsCnt = await NewsModel.count(where);
-		let meetCnt = await MeetModel.count(where);
+		// let meetCnt = await MeetModel.count(where);
 		let productCnt = await ProductModel.count(where);
 		let albumCnt = await AlbumModel.count(where);
 		return [
 			{ title: '用户数', cnt: userCnt },
 			{ title: '内容数', cnt: newsCnt },
-			{ title: '预约项目', cnt: meetCnt },
+			// { title: '预约项目', cnt: meetCnt },
 			{ title: '套系数', cnt: productCnt },
 			{ title: '样片数', cnt: albumCnt },
 		]

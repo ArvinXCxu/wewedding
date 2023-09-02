@@ -13,7 +13,7 @@ module.exports = {
 	// 资讯 
 	NEWS_CATE: [
 		{ id: 1, title: '本店动态', style: 'leftbig3' },
-		{ id: 2, title: '拍摄小贴士', style: 'leftbig' },
+		{ id: 2, title: '护理小贴士', style: 'leftbig' },
 	],
 
 	// ### 预约相关

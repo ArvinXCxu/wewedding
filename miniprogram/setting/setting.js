@@ -1,6 +1,6 @@
 module.exports = {
 	//### 环境相关 
-	CLOUD_ID: 'init-5go8b8pdc98ea814', //云服务id ,本地测试环境 
+	CLOUD_ID: 'xc-cloud123-4ghts907fdaf7730', //云服务id ,本地测试环境 
 
 	// #### 版本信息 
 	VER: 'build 2022.06',
