@@ -22,7 +22,13 @@ class AdminAlbumService extends BaseProjectAdminService {
 		order,
 		forms
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：7');
+		return await AlbumModel.insert({
+			title,
+			cateId,
+			cateName,
+			order,
+			forms
+		});
 	}
 
 	/**删除数据 */
@@ -30,8 +36,7 @@ class AdminAlbumService extends BaseProjectAdminService {
 		let where = {
 			_id: id
 		}
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：8');
+		return await AlbumModel.del(where);
 
 	}
 
@@ -53,7 +58,10 @@ class AdminAlbumService extends BaseProjectAdminService {
 		id,
 		hasImageForms
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：9');
+		let where = {
+			_id: id
+		}
+		return await AlbumModel.editForms(where, hasImageForms);
 	}
 
 
@@ -66,8 +74,16 @@ class AdminAlbumService extends BaseProjectAdminService {
 		order,
 		forms,
 	}) {
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：11');
+		let where = {
+			_id: id
+		}
+		return await AlbumModel.edit(where, {
+			title,
+			cateId,
+			cateName,
+			order,
+			forms
+		});
 	}
 
 	/**取得分页列表 */
@@ -134,17 +150,32 @@ class AdminAlbumService extends BaseProjectAdminService {
 
 	/**修改状态 */
 	async statusAlbum(id, status) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：12');
+		let where = {
+			_id: id
+		}
+		return await AlbumModel.edit(where, {
+			ALBUM_STATUS: status
+		});
 	}
 
 	/**置顶与排序设定 */
 	async sortAlbum(id, sort) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：13');
+		let where = {
+			_id: id
+		}
+		return await AlbumModel.edit(where, {
+			ALBUM_ORDER: sort
+		});
 	}
 
 	/**首页设定 */
 	async homeAlbum(id, home) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：14');
+		let where = {
+			_id: id
+		}
+		return await AlbumModel.edit(where, {
+			ALBUM_HOME: home
+		});
 	}
 }
 

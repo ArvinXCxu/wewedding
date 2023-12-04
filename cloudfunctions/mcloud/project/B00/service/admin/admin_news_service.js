@@ -10,7 +10,6 @@ const dataUtil = require('../../../../framework/utils/data_util.js');
 const util = require('../../../../framework/utils/util.js');
 const cloudUtil = require('../../../../framework/cloud/cloud_util.js');
 
-const NewsModel = require('../../model/news_model.js');
 const setupUtil = require("../../../../framework/utils/setup/setup_util");
 
 class AdminNewsService extends BaseProjectAdminService {

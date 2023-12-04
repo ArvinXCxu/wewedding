@@ -22,15 +22,18 @@ class AdminProductService extends BaseProjectAdminService {
 		order,
 		forms
 	}) {
-
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：22');
+		return await ProductModel.insert({
+			title,
+			cateId,
+			cateName,
+			order,
+			forms
+		});
 	}
 
 	/**删除数据 */
 	async delProduct(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：23');
-
+		return await ProductModel.del(id);
 	}
 
 	/**获取信息 */
@@ -51,9 +54,14 @@ class AdminProductService extends BaseProjectAdminService {
 		id,
 		hasImageForms
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：24');
+		return await ProductModel.update({
+			_id: id
+		}, {
+			$set: {
+				'PRODUCT_OBJ.hasImageForms': hasImageForms
+			}
+		});
 	}
-
 
 	/**更新数据 */
 	async editProduct({
@@ -64,8 +72,17 @@ class AdminProductService extends BaseProjectAdminService {
 		order,
 		forms,
 	}) {
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：25');
+		return await ProductModel.update({
+			_id: id
+		}, {
+			$set: {
+				'PRODUCT_TITLE': title,
+				'PRODUCT_CATE_ID': cateId,
+				'PRODUCT_CATE_NAME': cateName,
+				'PRODUCT_ORDER': order,
+				'PRODUCT_OBJ.forms': forms
+			}
+		});
 	}
 
 	/**取得分页列表 */
@@ -143,17 +160,35 @@ class AdminProductService extends BaseProjectAdminService {
 
 	/**修改状态 */
 	async statusProduct(id, status) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：26');
+		return await ProductModel.update({
+			_id: id
+		}, {
+			$set: {
+				'PRODUCT_STATUS': status
+			}
+		});
 	}
 
 	/**置顶与排序设定 */
 	async sortProduct(id, sort) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：27');
+		return await ProductModel.update({
+			_id: id
+		}, {
+			$set: {
+				'PRODUCT_ORDER': sort
+			}
+		});
 	}
 
 	/**首页设定 */
 	async homeProduct(id, home) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：28');
+		return await ProductModel.update({
+			_id: id
+		}, {
+			$set: {
+				'PRODUCT_HOME': home
+			}
+		});
 	}
 }
 

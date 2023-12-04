@@ -40,7 +40,9 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	// 按项目统计人数
 	async statJoinCntByMeet(meetId) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：15');
+		return await JoinModel.count({
+			DAY_MEET_ID: meetId
+		});
 	}
 
 	/** 自助签到码 */
@@ -70,12 +72,26 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	/** 管理员按钮核销 */
 	async checkinJoin(joinId, flag) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：16');
+		return await JoinModel.edit({
+			DAY_JOIN_ID: joinId
+		}, {
+			DAY_JOIN_ADMIN: adminId,
+			DAY_JOIN_ADMIN_NAME: adminName,
+			DAY_JOIN_ADMIN_TIME: timeUtil.time(),
+			DAY_JOIN_FLAG: flag
+		});
 	}
 
 	/** 管理员扫码核销 */
 	async scanJoin(meetId, code) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：17');
+		return await JoinModel.edit({
+			DAY_MEET_ID: meetId,
+			DAY_CODE: code
+		}, {
+			DAY_JOIN_ADMIN: adminId,
+			DAY_JOIN_ADMIN_NAME: adminName,
+			DAY_JOIN_ADMIN_TIME: timeUtil.time()
+		});
 	}
 
 	/**
@@ -104,7 +120,16 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	/** 取消某个时间段的所有预约记录 */Ï
 	async cancelJoinByTimeMark(admin, meetId, timeMark, reason) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：21');
+		return await JoinModel.edit({
+			DAY_MEET_ID: meetId,
+			DAY_TIME_MARK: timeMark,
+			DAY_JOIN_FLAG: 0
+		}, {
+			DAY_JOIN_ADMIN: admin,
+			DAY_JOIN_ADMIN_NAME: adminName,
+			DAY_JOIN_ADMIN_TIME: timeUtil.time(),
+			DAY_JOIN_REASON: reason
+		});
 
 	}
 
@@ -120,12 +145,21 @@ class AdminMeetService extends BaseProjectAdminService {
 		formSet,
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：31');
+		return await MeetModel.insert({
+			MEET_TITLE: title,
+			MEET_ORDER: order,
+			MEET_TYPE_ID: typeId,
+			MEET_TYPE_NAME: typeName,
+			MEET_DAYS_SET: daysSet,
+			MEET_IS_SHOW_LIMIT: isShowLimit,
+			MEET_FORM_SET: formSet,
+			MEET_ADMIN_ID: adminId,
+		})
 	}
 
 	/**删除数据 */
 	async delMeet(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：32');
+		return await MeetModel.del(id);
 	}
 
 	/**获取信息 */
@@ -153,7 +187,11 @@ class AdminMeetService extends BaseProjectAdminService {
 		content // 富文本数组
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：33');
+		return await MeetModel.edit({
+			_id: id
+		}, {
+			MEET_CONTENT: content
+		})
 
 	}
 
@@ -166,13 +204,22 @@ class AdminMeetService extends BaseProjectAdminService {
 		styleSet
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：34');
+		return await MeetModel.edit({
+			_id: meetId
+		}, {
+			MEET_STYLE_SET: styleSet
+		});
 
 	}
 
 	/** 更新日期设置 */
 	async _editDays(meetId, nowDay, daysSetData) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：36');
+		return await DayModel.update({
+			DAY_MEET_ID: meetId,
+			DAY_DAY: nowDay
+		}, {
+			DAY_TIMES: daysSetData
+		});
 	}
 
 	/**更新数据 */
@@ -186,8 +233,17 @@ class AdminMeetService extends BaseProjectAdminService {
 		isShowLimit,
 		formSet
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：41');
-
+		return await MeetModel.edit({
+			_id: id
+		}, {
+			MEET_TITLE: title,
+			MEET_TYPE_ID: typeId,
+			MEET_TYPE_NAME: typeName,
+			MEET_ORDER: order,
+			MEET_DAYS_SET: daysSet,
+			MEET_IS_SHOW_LIMIT: isShowLimit,
+			MEET_FORM_SET: formSet
+		});
 	}
 
 	/**预约名单分页列表 */
@@ -298,7 +354,7 @@ class AdminMeetService extends BaseProjectAdminService {
 
 	/** 删除 */
 	async delJoin(joinId) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：42');
+		return await JoinModel.del(joinId);
 
 	}
 
@@ -306,17 +362,33 @@ class AdminMeetService extends BaseProjectAdminService {
 	 * 特殊约定 99=>正常取消 
 	 */
 	async statusJoin(admin, joinId, status, reason = '') {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：53');
+		return await JoinModel.edit({
+			_id: joinId
+		}, {
+			JOIN_ADMIN: admin,
+			JOIN_ADMIN_NAME: adminName,
+			JOIN_ADMIN_TIME: timeUtil.time(),
+			JOIN_STATUS: status,
+			JOIN_REASON: reason
+		})
 	}
 
 	/**修改项目状态 */
 	async statusMeet(id, status) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：52');
+		return await MeetModel.edit({
+			_id: id
+		}, {
+			MEET_STATUS: status
+		});
 	}
 
 	/**置顶排序设定 */
 	async sortMeet(id, sort) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：51');
+		return await MeetModel.edit({
+			_id: id
+		}, {
+			MEET_ORDER: sort
+		});
 	}
 
 	//##################模板
@@ -325,8 +397,10 @@ class AdminMeetService extends BaseProjectAdminService {
 		name,
 		times,
 	}) {
-
-		this.AppError('该功能暂不开放，如有需要请加作者微信：50');
+		return await setupUtil.add(SETUP_MEET_TEMP_KEY, {
+			name,
+			times
+		});
 
 	}
 
@@ -337,13 +411,17 @@ class AdminMeetService extends BaseProjectAdminService {
 		isLimit
 	}) {
 
-		this.AppError('该功能暂不开放，如有需要请加作者微信：49');
+		return await setupUtil.edit(SETUP_MEET_TEMP_KEY, {
+			_id: id,
+			limit,
+			isLimit
+		});
 	}
 
 
 	/**删除数据 */
 	async delMeetTemp(id) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：48');
+		return await setupUtil.del(SETUP_MEET_TEMP_KEY, id);
 
 	}
 
@@ -373,7 +451,12 @@ class AdminMeetService extends BaseProjectAdminService {
 		endDay,
 		status
 	}) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：47');
+		return await exportUtil.exportDataExcel(EXPORT_JOIN_DATA_KEY, {
+			meetId,
+			startDay,
+			endDay,
+			status
+		});
 
 	}
 

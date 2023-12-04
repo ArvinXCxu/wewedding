@@ -29,7 +29,7 @@ class AdminHomeService extends BaseProjectAdminService {
 			{ title: '内容数', cnt: newsCnt },
 			// { title: '预约项目', cnt: meetCnt },
 			{ title: '套系数', cnt: productCnt },
-			{ title: '样片数', cnt: albumCnt },
+			{ title: '图片数量', cnt: albumCnt },
 		]
 	} 
 

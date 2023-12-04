@@ -29,7 +29,7 @@
 		</view>
 	</view>
 
-	<view class="comm-list grid col-3">
+	<view class="comm-list grid col-4">
 		<view class="item" bindtap="url" data-url="../../user/list/admin_user_list"> <text class="icon-group_fill text-green"></text> <text class="text-black">用户管理</text>
 		</view>
 		<!-- <view class="item" bindtap="url" data-url="../../meet/list/admin_meet_list"> <text class="icon-activityfill text-blue"></text> <text class="text-black">预约管理</text>
